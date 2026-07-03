@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Real Estate</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+            🏡 Luxury Estates
+        </a>
+
+        <div>
+
+            {% if user.is_authenticated %}
+
+                <a href="{% url 'dashboard' %}" class="btn btn-outline-light me-2">
+                    Dashboard
+                </a>
+
+                <a href="{% url 'profile' %}" class="btn btn-outline-light me-2">
+                    My Profile
+                </a>
+
+                <a href="{% url 'logout' %}" class="btn btn-danger">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'login' %}" class="btn btn-outline-light me-2">
+                    Login
+                </a>
+
+                <a href="{% url 'register' %}" class="btn btn-warning">
+                    Register
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-4 fw-bold">
+            Find Your Dream Home
+        </h1>
+
+        <p class="lead text-muted">
+            Premium properties across Nigeria.
+        </p>
+
+    </div>
+
+    <!-- Search -->
+
+    <form method="GET" class="card shadow-sm p-4 mb-5">
+
+        <div class="row">
+
+            <div class="col-md-3 mb-3">
+                <input
+                    type="text"
+                    name="location"
+                    value="{{ location }}"
+                    class="form-control"
+                    placeholder="Location">
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <input
+                    type="number"
+                    name="min_price"
+                    value="{{ min_price }}"
+                    class="form-control"
+                    placeholder="Min Price">
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <input
+                    type="number"
+                    name="max_price"
+                    value="{{ max_price }}"
+                    class="form-control"
+                    placeholder="Max Price">
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <select
+                    name="property_type"
+                    class="form-select">
+
+                    <option value="">All Types</option>
+
+                    <option value="House">House</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Land">Land</option>
+                    <option value="Commercial">Commercial</option>
+
+                </select>
+
+            </div>
+
+            <div class="col-md-2">
+
+                <button class="btn btn-dark w-100">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+
+    <!-- Featured -->
+
+    <h2 class="mb-4">
+        ⭐ Featured Properties
+    </h2>
+
+    <div class="row mb-5">
+
+        {% for property in featured_properties %}
+
+        <div class="col-lg-4 mb-4">
+
+            <div class="card shadow border-warning h-100">
+
+                {% if property.image %}
+                <img src="{{ property.image.url }}"
+                     class="card-img-top"
+                     style="height:240px; object-fit:cover;">
+                {% endif %}
+
+                <div class="card-body">
+
+                    <span class="badge bg-warning text-dark">
+                        Featured
+                    </span>
+
+                    <span class="badge bg-primary">
+                        {{ property.property_type }}
+                    </span>
+
+                    <h4 class="mt-3">
+                        {{ property.title }}
+                    </h4>
+
+                    <h5 class="text-success">
+                        ₦{{ property.price }}
+                    </h5>
+
+                    <p>📍 {{ property.location }}</p>
+
+                    <a href="{% url 'property_detail' property.id %}"
+                       class="btn btn-dark">
+                        View Property
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No featured properties yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+
+    <hr class="my-5">
+
+
+    <h2 class="mb-4">
+        All Properties
+    </h2>
+
+    <div class="row">
+
+        {% for property in properties %}
+
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <div class="card shadow h-100 border-0">
+
+                {% if property.image %}
+                <img src="{{ property.image.url }}"
+                     class="card-img-top"
+                     style="height:220px; object-fit:cover;">
+                {% endif %}
+
+                <div class="card-body">
+
+                    {% if property.featured %}
+                    <span class="badge bg-warning text-dark mb-2">
+                        ⭐ Featured
+                    </span>
+                    {% endif %}
+
+                    <span class="badge bg-primary mb-2">
+                        {{ property.property_type }}
+                    </span>
+
+                    <h4>{{ property.title }}</h4>
+
+                    <h5 class="text-success">
+                        ₦{{ property.price }}
+                    </h5>
+
+                    <p>
+                        📍 {{ property.location }}
+                    </p>
+
+                    <p>
+                        {{ property.description|truncatewords:20 }}
+                    </p>
+
+                </div>
+
+                <div class="card-footer bg-white">
+
+                    <a href="{% url 'property_detail' property.id %}"
+                       class="btn btn-dark w-100">
+                        View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="alert alert-info">
+            No properties available.
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
