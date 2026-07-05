@@ -1,0 +1,867 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+    background:#0f172a !important;
+    padding:15px 0;
+    transition:.3s;
+}
+
+.navbar-brand{
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-link{
+    font-weight:500;
+    margin-left:12px;
+}
+
+.nav-link:hover{
+    color:#ffc107 !important;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:85vh;
+
+    background:
+    linear-gradient(
+        rgba(10,15,35,.75),
+        rgba(10,15,35,.75)
+    ),
+
+    url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1800")
+    center/cover;
+
+    display:flex;
+    align-items:center;
+}
+
+.hero h1{
+
+    font-size:64px;
+    font-weight:700;
+}
+
+.hero p{
+
+    font-size:22px;
+    opacity:.9;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn-primary{
+
+    background:#2563eb;
+    border:none;
+}
+
+.btn-primary:hover{
+
+    background:#1d4ed8;
+}
+
+.btn-warning{
+
+    font-weight:600;
+}
+
+.btn-dark{
+
+    background:#111827;
+}
+
+.btn{
+
+    border-radius:12px;
+}
+
+/* ==========================
+   SEARCH CARD
+========================== */
+
+.search-card{
+
+    margin-top:-70px;
+
+    position:relative;
+
+    z-index:99;
+
+    border-radius:18px;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.12);
+}
+
+.card img{
+
+    transition:.35s;
+}
+
+.card:hover img{
+
+    transform:scale(1.05);
+}
+
+/* ==========================
+   PROPERTY PRICE
+========================== */
+
+.price{
+
+    color:#16a34a;
+
+    font-size:28px;
+
+    font-weight:700;
+}
+
+/* ==========================
+   BADGES
+========================== */
+
+.badge{
+
+    padding:8px 14px;
+
+    border-radius:30px;
+}
+
+/* ==========================
+   SECTION TITLES
+========================== */
+
+.section-title{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:35px;
+}
+
+/* ==========================
+   ICON BOXES
+========================== */
+
+.icon-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.icon-box:hover{
+
+    transform:translateY(-8px);
+}
+
+.icon{
+
+    font-size:50px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    margin-top:80px;
+
+    padding:60px 0;
+}
+
+footer a{
+
+    color:#ddd;
+
+    text-decoration:none;
+}
+
+footer a:hover{
+
+    color:#ffc107;
+}
+
+/* ==========================
+   PROPERTY DETAIL
+========================== */
+
+.gallery-image{
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+}
+
+/* ==========================
+   DASHBOARD
+========================== */
+
+.stat-card{
+
+    border-radius:20px;
+
+    color:white;
+
+    padding:30px;
+}
+
+.stat-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+}
+
+/* ==========================
+   TABLES
+========================== */
+
+.table{
+
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+}
+
+.search-card{
+
+margin-top:20px;
+
+}
+
+}
+
+/* ================= HERO ================= */
+
+.hero-section{
+
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.hero-house{
+
+border-radius:30px;
+
+transition:.5s;
+
+}
+
+.hero-house:hover{
+
+transform:scale(1.03);
+
+}
+
+.hero-section h1{
+
+line-height:1.1;
+
+}
+
+.hero-section .btn{
+
+border-radius:50px;
+
+padding:14px 35px;
+
+font-weight:600;
+
+}
+
+.hero-section::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+
+height:600px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:50%;
+
+top:-220px;
+
+right:-220px;
+
+}
+
+.hero-section::after{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:rgba(255,255,255,.04);
+
+bottom:-150px;
+
+left:-150px;
+
+border-radius:50%;
+
+}
+
+.card{
+
+border:none;
+
+border-radius:20px;
+
+transition:.35s;
+
+overflow:hidden;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.card img{
+
+transition:.5s;
+
+}
+
+.card:hover img{
+
+transform:scale(1.06);
+
+}
+
+/* ================= SEARCH ================= */
+
+.search-wrapper{
+
+margin-top:-70px;
+
+position:relative;
+
+z-index:20;
+
+}
+
+.search-box{
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(20px);
+
+padding:35px;
+
+border-radius:25px;
+
+}
+
+.search-box input,
+.search-box select{
+
+height:60px;
+
+border-radius:15px;
+
+border:1px solid #ddd;
+
+}
+
+.search-box input:focus,
+.search-box select:focus{
+
+box-shadow:none;
+
+border:2px solid #0d6efd;
+
+}
+
+.search-box button{
+
+height:60px;
+
+border-radius:15px;
+
+font-weight:700;
+
+}
+
+/* ================= STATS ================= */
+
+.stats-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:25px;
+
+transition:.4s;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.stats-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.stats-card h1{
+
+font-size:50px;
+
+font-weight:700;
+
+color:#0d6efd;
+
+}
+
+.stats-card p{
+
+font-size:18px;
+
+color:#777;
+
+margin:0;
+
+}
+
+/* ================= PROPERTY CARDS ================= */
+
+.property-card{
+
+border:none;
+
+border-radius:25px;
+
+overflow:hidden;
+
+transition:.4s;
+
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+}
+
+.property-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+
+.property-image{
+
+height:250px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.property-card:hover .property-image{
+
+transform:scale(1.08);
+
+}
+
+.featured-badge{
+
+position:absolute;
+
+top:15px;
+
+left:15px;
+
+padding:8px 14px;
+
+font-size:14px;
+
+}
+
+.price-badge{
+
+position:absolute;
+
+bottom:15px;
+
+right:15px;
+
+background:#0d6efd;
+
+color:white;
+
+padding:10px 18px;
+
+font-weight:700;
+
+border-radius:50px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+}
+
+.property-card .card-body{
+
+padding:25px;
+
+}
+
+.property-card h4{
+
+font-size:1.35rem;
+
+margin-top:10px;
+
+margin-bottom:15px;
+
+}
+
+.property-card .btn{
+
+font-weight:600;
+
+padding:12px;
+
+}
+
+/* ================= FEATURES ================= */
+
+.feature-box{
+
+background:white;
+
+padding:45px 30px;
+
+border-radius:25px;
+
+transition:.4s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.feature-box:hover{
+
+transform:translateY(-10px);
+
+}
+
+.feature-icon{
+
+width:90px;
+
+height:90px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:40px;
+
+background:#0d6efd;
+
+color:white;
+
+border-radius:50%;
+
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonial-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+
+height:100%;
+
+}
+
+.testimonial-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+/* ===================================
+   FINAL PROFESSIONAL DESIGN UPGRADE
+=================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+.section-title{
+    font-size:2.2rem;
+    font-weight:700;
+    color:#1e293b;
+}
+
+.navbar{
+    backdrop-filter:blur(12px);
+}
+
+.navbar.scrolled{
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.hero-section{
+    min-height:90vh;
+}
+
+.hero-section h1{
+    font-weight:800;
+}
+
+.hero-section p{
+    max-width:600px;
+}
+
+.search-box{
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
+
+.property-card{
+    transition:all .35s ease;
+}
+
+.property-card:hover{
+    transform:translateY(-12px);
+}
+
+.property-card img{
+    transition:.45s;
+}
+
+.property-card:hover img{
+    transform:scale(1.08);
+}
+
+.property-price{
+    color:#198754;
+    font-size:28px;
+    font-weight:700;
+}
+
+.property-location{
+    color:#6c757d;
+}
+
+.property-type{
+    border-radius:50px;
+    padding:8px 14px;
+}
+
+.btn-primary,
+.btn-warning,
+.btn-dark{
+    border-radius:12px;
+}
+
+footer{
+    background:#0f172a;
+    color:#fff;
+}
+
+footer h5{
+    font-weight:700;
+}
+
+footer a{
+    color:#d9d9d9;
+    text-decoration:none;
+    transition:.3s;
+}
+
+footer a:hover{
+    color:#ffc107;
+}
+
+.social-icon{
+    width:42px;
+    height:42px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#1e293b;
+    color:white;
+    transition:.3s;
+}
+
+.social-icon:hover{
+    background:#2563eb;
+    transform:translateY(-3px);
+}
+
+.dashboard-card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.dashboard-card:hover{
+    transform:translateY(-6px);
+}
+
+.detail-card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.gallery-image{
+    border-radius:15px;
+}
+
+.gallery-image:hover{
+    opacity:.85;
+}
+
+.badge{
+    font-weight:600;
+}
